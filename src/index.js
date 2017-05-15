@@ -1,7 +1,3 @@
-class NwPlugin {
-  apply(compiler) {
-    //
-  }
-}
+import NwPlugin from './NwPlugin';
 
 module.exports = NwPlugin;

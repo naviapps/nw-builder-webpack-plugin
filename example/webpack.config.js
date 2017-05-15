@@ -1,20 +1,24 @@
 const path = require('path');
-const NwPlugin = require('../lib');
+const NwPlugin = require('../dist');
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  rules: [
-    {
-      test: /\.js$/,
-      use: ['babel-loader'],
-      exclude: /node_modules/
-    }
-  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: ['babel-loader'],
+        exclude: /node_modules/
+      }
+    ]
+  },
   plugins: [
-    new NwPlugin(),
+    new NwPlugin({
+      //
+    }),
   ]
 };

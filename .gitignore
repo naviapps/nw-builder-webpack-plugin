@@ -1,4 +1,8 @@
 .DS_Store
 .idea/
+dist/
 node_modules/
 Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

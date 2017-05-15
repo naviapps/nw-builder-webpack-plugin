@@ -1,6 +1,7 @@
 {
-  "name": "example",
+  "name": "nw-webpack-plugin-example",
+  "main": "index.html",
   "scripts": {
-    "start": ""
+    "build": "../node_modules/.bin/webpack"
   }
 }
