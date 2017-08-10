@@ -2,8 +2,8 @@
 Thumbs.db
 .idea/
 lib/
+build/
 cache/
-example/dist/
 
 # Logs
 npm-debug.log*
