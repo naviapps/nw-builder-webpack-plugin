@@ -1,25 +1,19 @@
-# NW.js Webpack Plugin
+# NW.js Builder Webpack Plugin
 
 * NW.js build
 
 npm
 
 ```bash
-npm install --save-dev nw-webpack-plugin
-```
-
-[Yarn](https://yarnpkg.com)
-
-```bash
-yarn add --dev nw-webpack-plugin
+npm install --save-dev nw-builder-webpack-plugin
 ```
 
 ```js
-const NwPlugin = require('nw-webpack-plugin');
+const NwBuilderPlugin = require('nw-builder-webpack-plugin');
 
 module.exports = {
   plugins: [
-    new NwPlugin()
+    new NwBuilderPlugin()
   ]
 };
 ```

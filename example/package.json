@@ -2,6 +2,6 @@
   "name": "nw-webpack-plugin-example",
   "main": "index.html",
   "scripts": {
-    "build": "../node_modules/.bin/webpack"
+    "build": "../node_modules/.bin/babel ../src -d ../lib && ../node_modules/.bin/webpack"
   }
 }

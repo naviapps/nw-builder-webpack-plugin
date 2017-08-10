@@ -1,5 +1,5 @@
 {
-  "name": "nw-webpack-plugin",
+  "name": "nw-builder-webpack-plugin",
   "version": "0.0.1",
   "description": "NW.js plugin for Webpack",
   "keywords": [
@@ -10,26 +10,32 @@
     "webpack",
     "plugin"
   ],
+  "homepage": "https://github.com/naviapps/nw-builder-webpack-plugin",
   "bugs": {
-    "url": "https://github.com/naviapps/nw-webpack-plugin/issues"
+    "url": "https://github.com/naviapps/nw-builder-webpack-plugin/issues"
   },
   "license": "MIT",
   "author": "Haruki Fukui",
-  "main": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/naviapps/nw-webpack-plugin.git"
-  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "repository": "naviapps/nw-builder-webpack-plugin",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "babel src -d lib"
+    "build": "babel src -d lib",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "nw-builder": "^3.4.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
+    "babel-core": "^6.25.0",
     "babel-env": "^2.4.1",
-    "babel-loader": "^7.0.0",
-    "eslint": "^3.19.0",
-    "webpack": "^2.5.1"
+    "babel-loader": "^7.1.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.4.1",
+    "webpack": "^3.5.2"
   }
 }

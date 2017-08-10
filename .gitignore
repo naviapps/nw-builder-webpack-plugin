@@ -1,8 +1,9 @@
-.idea/
-lib/
-example/dist/
 *.DS_Store
 Thumbs.db
+.idea/
+lib/
+cache/
+example/dist/
 
 # Logs
 npm-debug.log*

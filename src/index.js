@@ -1,3 +1,3 @@
-import NwPlugin from './NwPlugin';
+import NwBuilderPlugin from './NwBuilderPlugin';
 
-module.exports = NwPlugin;
+module.exports = NwBuilderPlugin;

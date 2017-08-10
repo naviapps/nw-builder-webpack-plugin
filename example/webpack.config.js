@@ -1,5 +1,5 @@
 const path = require('path');
-const NwPlugin = require('../dist');
+const NwBuilderPlugin = require('../lib');
 
 module.exports = {
   entry: './src/index.js',
@@ -17,8 +17,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new NwPlugin({
-      //
+    new NwBuilderPlugin({
+      platforms: ['osx64'],
+      version: '0.24.1'
     }),
   ]
 };
