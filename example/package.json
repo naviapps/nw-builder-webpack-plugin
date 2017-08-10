@@ -1,7 +1,9 @@
 {
   "name": "nw-webpack-plugin-example",
   "main": "index.html",
+  "version": "0.0.1",
   "scripts": {
-    "build": "../node_modules/.bin/babel ../src -d ../lib && ../node_modules/.bin/webpack"
+    "prebuild": "../node_modules/.bin/rimraf ./dist",
+    "build": "../node_modules/.bin/webpack"
   }
 }
