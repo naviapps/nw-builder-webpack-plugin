@@ -1,6 +1,6 @@
 {
   "name": "nw-builder-webpack-plugin",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "NW.js plugin for Webpack",
   "keywords": [
     "nw",
