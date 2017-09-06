@@ -1,9 +1,10 @@
 {
   "name": "nw-webpack-plugin-example",
-  "main": "index.html",
   "version": "0.0.1",
+  "main": "index.html",
   "scripts": {
-    "prebuild": "../node_modules/.bin/rimraf ./dist",
-    "build": "../node_modules/.bin/webpack"
+    "start": "../node_modules/.bin/webpack-dev-server --config webpack.config.dev.js",
+    "prebuild": "../node_modules/.bin/rimraf ./build",
+    "build": "../node_modules/.bin/webpack --config webpack.config.prod.js"
   }
 }

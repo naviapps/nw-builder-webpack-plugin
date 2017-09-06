@@ -1,14 +1,12 @@
-import path from 'path';
 import NwBuilder from 'nw-builder';
+import detectCurrentPlatform from 'nw-builder/lib/detectCurrentPlatform';
 
 export default class NwBuilderPlugin {
-  defaultOptions = {
-    flavor: 'normal',
-    cacheDir: path.resolve(__dirname, '..', 'cache'),
-  };
-
   constructor(options) {
-    this.options = Object.assign(this.defaultOptions, options);
+    this.options = Object.assign({
+      run: false,
+      quiet: false,
+    }, options);
   }
 
   apply(compiler) {
@@ -16,18 +14,30 @@ export default class NwBuilderPlugin {
   }
 
   onAfterEmit(compilation, callback) {
+    const run = this.options.run;
+    const quiet = this.options.quiet;
+    delete this.options.run;
+    delete this.options.quiet;
+
     const options = Object.assign({
-      files: `${compilation.outputOptions.path}/**/**`,
+      files: `${compilation.outputOptions.path}/**/*`,
     }, this.options);
 
+    // If we are in run mode
+    if (run) {
+      const currentPlatform = detectCurrentPlatform();
+      if (!options.platforms) options.platforms = [currentPlatform];
+      options.currentPlatform = currentPlatform;
+    }
+
+    // Build App
     const nw = new NwBuilder(options);
-    nw.on('log', console.log);
-    nw.build()
-      .then(() => {
-        console.log('NW.js build successfully.');
-        callback();
-      }).catch(err => {
-        console.error(err);
-      });
+
+    // Logging
+    if (!quiet) nw.on('log', console.log);
+
+    // Build or run the app
+    const np = run ? nw.run() : nw.build();
+    np.then(() => callback()).catch(console.error);
   }
 }

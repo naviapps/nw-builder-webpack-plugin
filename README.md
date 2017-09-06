@@ -36,11 +36,3 @@ Change default value
 #### options.files
 nw-builder: `null`  
 nw-builder-webpack-plugin: `${output.path}/**/**`
-
-#### options.flavor
-nw-builder: `sdk`  
-nw-builder-webpack-plugin: `normal`
-
-#### options.cacheDir
-nw-builder: `./cache`  
-nw-builder-webpack-plugin: `./node_modules/nw-builder-webpack-plugin/cache`

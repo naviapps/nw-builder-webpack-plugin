@@ -22,10 +22,11 @@ module.exports = {
     new HtmlWebpackPlugin(),
     new CopyWebpackPlugin([
       { from: 'package.json' },
+      //{ from: 'index.html' },
     ]),
     new NwBuilderPlugin({
       platforms: ['osx64'],
-      version: '0.24.1',
+      version: 'latest',
     }),
   ],
 };
