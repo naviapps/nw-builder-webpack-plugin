@@ -1,7 +1,6 @@
 *.DS_Store
 Thumbs.db
 .idea/
-lib/
 build/
 cache/
 
