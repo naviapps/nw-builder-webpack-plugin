@@ -27,7 +27,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "nw-builder": "^3.4.1"
+    "nw-builder": "^3.5.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
