@@ -2,15 +2,17 @@
 
 > This is a Webpack plugin that wrapped [`nw-builder`](https://github.com/nwjs-community/nw-builder).
 
+## Getting Started
+
 ###  Installation
 
-npm
-
-```bash
+```sh
 npm install --save-dev nw-builder-webpack-plugin
 ```
 
-## Usage
+### Usage
+
+webpack.config.js
 
 ```js
 const NwBuilderPlugin = require('nw-builder-webpack-plugin');

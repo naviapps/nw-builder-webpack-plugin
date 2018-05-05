@@ -1,4 +1,7 @@
+'use strict';
+
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const NwBuilderPlugin = require('../lib');
@@ -19,13 +22,18 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.resolve(__dirname, 'index.html'),
+    }),
     new CopyWebpackPlugin([
       { from: 'package.json' },
-      //{ from: 'index.html' },
     ]),
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify('production'),
+    }),
     new NwBuilderPlugin({
-      platforms: ['osx64'],
+      platforms: ['osx64', 'win32', 'win64'],
       version: 'latest',
     }),
   ],
