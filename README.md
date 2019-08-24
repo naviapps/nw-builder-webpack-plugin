@@ -15,15 +15,15 @@ npm install --save-dev nw-builder-webpack-plugin
 webpack.config.js
 
 ```js
-const NwBuilderPlugin = require('nw-builder-webpack-plugin');
+const NwBuilderWebpackPlugin = require('nw-builder-webpack-plugin');
 
 module.exports = {
   // ...
   plugins: [
     // ...
-    new NwBuilderPlugin({
+    new NwBuilderWebpackPlugin({
       platforms: ['osx64', 'win32', 'win64'],
-      version: '0.24.1'
+      version: '0.24.1',
     })
   ]
 };
