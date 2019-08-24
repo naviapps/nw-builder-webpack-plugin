@@ -38,3 +38,14 @@ Change default value
 #### options.files
 nw-builder: `null`  
 nw-builder-webpack-plugin: `${output.path}/**/**`
+
+Change default value
+
+#### options.flavor
+nw-builder: `sdk`  
+nw-builder-webpack-plugin: `mode === 'development ? 'sdk' : 'normal'`
+
+|mode       |value |
+|-----------|------|
+|development|sdk   |
+|production |normal|
