@@ -43,7 +43,7 @@ Change default value
 
 #### options.flavor
 nw-builder: `sdk`  
-nw-builder-webpack-plugin: `mode === 'development ? 'sdk' : 'normal'`
+nw-builder-webpack-plugin:
 
 |mode       |value |
 |-----------|------|
