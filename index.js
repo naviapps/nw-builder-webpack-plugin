@@ -1,6 +1,6 @@
 'use strict';
 const NwBuilder = require('nw-builder');
-const detectCurrentPlatform = require('nw-builder/lib/detectCurrentPlatform');
+const { detectCurrentPlatform } = require('nw-builder/dist/index.cjs')
 
 const pluginName = 'NwBuilderWebpackPlugin';
 
@@ -28,7 +28,7 @@ class NwBuilderWebpackPlugin {
 
   start(options) {
     options.flavor = options.flavor || 'sdk';
-    const currentPlatform = detectCurrentPlatform();
+    const currentPlatform = detectCurrentPlatform(process);
     if (!options.platforms) {
       options.platforms = [currentPlatform];
     }
